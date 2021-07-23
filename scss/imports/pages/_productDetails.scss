@@ -1,0 +1,176 @@
+.productDetails{
+    .banner{
+        --h:65rem;
+        height: var(--h);
+        background-image: url(/img/product_detail/nen.jpg);
+        background-size: cover;
+        position: relative;
+        &__img{
+            width: 100rem;
+            position: absolute;
+            top: 72%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            img{
+                display: none;
+            }
+            .active{
+                display: block;
+            }
+        }
+        @include sm{
+            .banner{
+                &__img{
+                    width: 85rem;
+                    top: 80%;
+                }
+            }
+        }
+        @include xs{
+            --h:40rem;
+            .banner{
+               
+                &__img{
+                    width: 45rem;
+                    top: 80%;
+                }
+            }
+        }
+
+    }
+    .intro{
+        padding-top: 13rem;
+        z-index: 100;
+        .color{
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 7rem;
+            &__item{
+                width: 5rem;
+                height: 5rem;
+                background: black;
+                margin: 0 10px;
+            }
+            .--white{
+                background: green;
+                border: 1px solid black;
+            }
+            .--red{
+                background: $red-bg-btn;
+                border: 1px solid $red-bg-btn;
+            }
+            .active{
+                border: 10px solid lightslategrey;
+            }
+        }
+        .textMain{
+            width: 90rem;
+            position: relative;
+            &__title{
+                font-size: 8rem;
+            }
+            &__text{
+                padding-top: 3rem;
+            }
+            .line{
+                margin: 4rem auto;
+                background: black;
+                height: 2px;
+                width: 8rem;
+            }
+        }
+        .content{
+            &__body{
+                .ct{
+                    .text{
+                        padding: 15px 0;
+                    }
+                }
+                .line{
+                    width: 7rem;
+                    
+                }
+            }
+        }
+        &__price{
+            text-align: center;
+            margin: 0 auto;
+            padding: 15px 0;
+            .text{
+                @include text(3.5rem,SFUEA,$lh-text,black,uppercase);
+            }
+            .number{
+                @include text(6rem,SFUEA,$lh-text,black,uppercase);
+            }
+        }
+        @include sm{
+            .textMain{
+                max-width: 75rem;
+            }
+        }
+        @include xs{
+            padding-top: 7rem;
+            .textMain{
+                max-width: 35rem;
+                &__title{
+                    font-size: 6rem;
+                    line-height: 5.3rem;
+                }
+            }
+        }
+    }
+    .producthot{
+        .textMain{
+            padding-bottom: 8rem;
+        }
+        .content{
+            &__body{
+                padding-top: 10rem;
+            }
+        }
+        @include sm{
+            padding-top: 0;
+            .textMain{
+                padding-bottom: 0;
+            }
+            .content{
+                &__body{
+                    padding-top: 5rem;
+                }
+            }
+        }
+    }
+}
+
+//bg
+.backgroud{
+    width: 100%;
+    height: 650px;
+    background: url(/img/home/background_home.jpg) no-repeat center;
+    background-size: cover;
+    position: relative;
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all $t;
+    .btn{
+        &-main{
+            margin: initial;
+            margin-top: 5rem;
+        }
+    }
+}
+@include sm{
+    .backgroud{
+        height: 500px;
+    }
+}
+@include xs{
+    .backgroud{
+        height: 400px;
+    }
+}

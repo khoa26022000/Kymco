@@ -1,0 +1,37 @@
+/* FONT FACE - font-display: fallback; */
+@font-face {
+    font-family: 'UTM';
+    src: url('../fonts/UTMAvo.woff2') format('woff2'),
+        url('../fonts/UTMAvo.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'SFUL';
+    src: url('../fonts/SFUDINLight.woff2') format('woff2'),
+        url('../fonts/SFUDINLight.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'UTMBold';
+    src: url('../fonts/UTMAvoBold.woff2') format('woff2'),
+        url('../fonts/UTMAvoBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'SFUEA';
+    src: url('../fonts/SFUDINEngAlt.woff2') format('woff2'),
+        url('../fonts/SFUDINEngAlt.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: fallback;
+}
+

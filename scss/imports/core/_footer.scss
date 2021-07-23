@@ -1,0 +1,63 @@
+// css footer
+footer{
+    --heightfooter: 41.5rem;
+    height: var(--heightfooter);
+    background: black;
+    color: white;
+    // @include text(3.5rem,UTM,$lh-text,$white-cl,uppercase);
+    position: relative;
+    .mid{
+        width: 100%;
+        padding-top: 5rem;
+        position:absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 4rem;
+        .title{
+                @include text(3rem,SFUEA,$lh-text,$white-cl,uppercase);
+        }
+        .list{
+            height: 100%;
+            display: flex;
+            li{
+                height: 100%;
+                    @include text(1.6rem,UTM,21px,$white-cl,uppercase);
+                    height: 100%;
+                    padding: 0 30px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+            }
+        }
+        .vn{
+            @include text(1.6rem,UTM,21px,$white-cl,none);
+            .hoa{
+                @include text(1.6rem,UTM,21px,$white-cl,uppercase);
+            }
+        }
+    }
+}
+@include sm{
+    footer{
+        --heightfooter: 45.5rem;
+    }
+}
+@include md{
+    footer{
+        --heightfooter: 50.5rem;
+    }
+}
+@include xs{
+    footer{
+        .mid{
+            .list{
+                li{
+                    padding: 0 20px;
+                }
+            }
+        }
+    }
+}

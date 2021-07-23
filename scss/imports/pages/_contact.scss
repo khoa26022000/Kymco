@@ -1,0 +1,142 @@
+.contact{
+    .banner{
+        --h:63rem;
+        height: var(--h);
+        background-image: url(/img/contact/banner.jpg);
+        background-position-x: center;
+        position: relative;
+        .textMain{
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            &__title{
+                color: white;
+            }
+            &__text{
+                color: white;
+            }
+        }
+        @include sm{
+            --h:40rem;
+        }
+    }
+    .intro{
+        .details{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            &__img{
+                margin-right: -35%;
+            }
+            &__content{
+                margin-right: -23%;
+                z-index: 1;
+                .line{
+                    width: 29rem;
+                    height: 5px;
+                    background: black;
+                    margin-left: -35%;
+                }
+                .text{
+                    @include text(3.5rem,SFUEA,4rem,black,none);
+                    letter-spacing: 2.5px;
+                    padding-bottom: 10rem;
+                    padding-top: 6rem;
+                }
+                .title{
+                    @include text(4.5rem,SFUEA,4rem,black,uppercase);
+                }
+                .line1{
+                    width: 100%;
+                    height: 2px;
+                    background: black;
+                    margin: 4rem 0;
+                }
+                .text1{
+                    @include text(3rem,SFUEA,4rem,black,none);
+                    margin: 2rem 0;
+                }
+                .form{
+                    display: flex;
+                    flex-direction: column;
+                    padding-top: 7rem;
+                    row-gap: 3rem;
+                    .hang{
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        column-gap: 6rem;
+                        input{
+                            outline:none;
+                            border: none;
+                            width: 100%;
+                            padding: 10px 0;
+                            border-bottom:  solid 2px black; 
+                            @include text(2.2rem,UTM,$lh-text,black,none);
+                            box-sizing:  border-box;
+                        }
+                    }
+                    .btn{
+                        @include text(2.5rem,SFUEA,$lh-text,$white-cl,uppercase);
+                        padding: 5px 5px;
+                        background: $red-bg-btn;
+                        border-radius: 40px;
+                        text-align: center;
+                        display: block;
+                        width: 20rem;
+                        margin-top: 2rem;
+                    }
+                }
+            }
+        }
+        .re{
+            padding-top: 12rem;
+            .details__content{
+                grid-area: 2/3/1/2;
+                margin-right: 0;
+                padding-top: 5rem;
+            }
+            .details__img{
+                grid-column: 1/2;
+                grid-row: 1/2;
+                margin-left: -35%;
+                margin-right: 0;
+            }
+        }
+    }
+    @include md{
+        .re{
+            .details__content{
+                margin-left: 2rem;
+            }
+        }
+    }
+    @include sm{
+        .intro{
+            .details{
+                display: flex;
+                flex-direction: column;
+                row-gap: 5rem;
+                &__img{
+                    margin-right: 0;
+                }
+                &__content{
+                    margin-right: 0;
+                    .line{
+                        display: none;
+                    }
+                }
+            }
+            .re{
+                .details__content{
+                    margin-left: 0;
+                }
+                .details__img{
+                    margin-left: 0;
+                }
+            }
+        }
+
+    }
+}

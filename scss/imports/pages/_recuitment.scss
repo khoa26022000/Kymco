@@ -1,0 +1,240 @@
+.recuitment{
+    .banner{
+        --h:65rem;
+        height: var(--h);
+        background-image: url(/img/tuyendung/slider.jpg);
+        background-position-x: center;
+        position: relative;
+        .textMain{
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            &__title{
+                color: white;
+            }
+            &__text{
+                color: white;
+            }
+        }
+        @include sm{
+            --h:40rem;
+        }
+    }
+    .intro{
+        .specifications{
+            &__content{
+                padding-top: 15rem;
+                margin-left: -5rem;
+                .title{
+                    font-size: 3.5rem;
+                }
+            }
+
+        }
+        .re{
+            padding-top: 27rem;
+            position: relative;
+            height: 68.5rem;
+            .specifications{
+                &__content{
+                    position: absolute;
+                    top: -23%;
+                    padding-top: 0;
+                    .title{
+                        line-height: 4.5rem;
+                        &__line{
+                            left: 0;
+                            width: 5rem;
+                        }
+                    }
+                    .details{
+                        .item{
+                            &__head{
+                                .title{
+                                    font-size: 3rem;
+                                    line-height: 3.5rem;
+                                }
+                            }
+                            &__content{
+                                display: block;
+                                .hang{
+                                    font-size: 2rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        @include md{
+            .specifications{
+                &__content{
+                    padding-top: 7rem;
+                    margin-left: 2rem;
+                }
+            }
+        }
+        @include sm{
+            .re{
+                padding-top: 5rem;
+                height: 100%;
+                .specifications{
+                    &__img{
+                        height: 100%;
+                        margin-right: 0;
+                    }
+                    &__content{
+                        position: initial;
+                        top: 0;
+                        margin-left: 0 !important;
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+    .bg{
+        --h:55rem;
+        width: 100%;
+        height: var(--h);
+        background-image: url(/img/tuyendung/bg.jpg);
+        @include sm{
+            display: none;
+        }
+    }
+    .location{
+        position: relative;
+        &__head{
+            .title{
+                position: relative;
+                margin: auto;
+                text-align: center;
+                @include text(3.5rem,SFUEA,6rem,black,uppercase);
+                &::before{
+                    content: '';
+                    width: 5rem;
+                    height: 5px;
+                    background: black;
+                    position: absolute;
+                    top: -20%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+        }
+        &__content{
+            // position: absolute;
+            height: 20rem;
+            .itemlcAll{
+                width: 100%;
+                padding-top: 9rem;
+                display: flex;
+                .itemlc{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    border: 1px solid gray;
+                    margin: 0 2.5rem;
+                    background: white;
+                    &__title{
+                        padding-top: 6rem;
+                        @include text(3.2rem,SFUEA,4rem,$red-bg-btn,uppercase);
+                    }
+                    &__title1{
+                        @include text(3.2rem,SFUEA,4rem,black,none);
+                    }
+                    &__line{
+                        height: 5px;
+                        width: 5rem;
+                        background: black;
+                        margin: 3.5rem 0;
+                    }
+                    &__text{
+                        padding: 0 7rem;
+                        text-align: center;
+                        @include overtext(7);
+                    }
+                    &__link{
+                        margin-top: 7rem;
+                        text-decoration: underline;
+                        color:$red-bg-btn;
+                    }
+                    &__bottom{
+                        margin-top: 3.5rem;
+                        width: 100%;
+                        height: 1rem;
+                        background: $red-bg-btn;
+                    }
+                }
+            }
+            .bottom{
+                padding-top: 6rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                column-gap: 1rem;
+                .next{
+                    cursor: pointer;
+                    width: 12rem;
+                    height: 6rem;
+                    background: white;
+                    position: relative;
+                    border: 1px solid gray;
+                    transition:  all $t;
+                    span{
+                        @include mid();
+                        font-weight: bold;
+                        white-space: nowrap;
+                    }
+                }
+                .num{
+                    cursor: pointer;
+                    width: 6rem;
+                    height: 6rem;
+                    background: white;
+                    position: relative;
+                    border: 1px solid gray;
+                    transition:  all $t;
+                    span{
+                        @include mid();
+                        font-weight: bold;
+                        @include text(3rem,SFUEA,4rem,black,none);
+                    }
+                }
+                .active{
+                    background-color:$red-bg-btn;
+                    transition:  all $t;
+                    span{
+                        color: white;
+                    }
+            }
+            }
+        }
+        @include md{
+            &__content{
+                .itemlcAll{
+                    .itemlc{
+                        &__text{
+                            padding: 0 5rem;
+                        }
+                    }
+                }
+            }
+        }
+        @include sm{
+            &__content{
+                height: 100%;
+                .itemlcAll{
+                    flex-direction: column;
+                    row-gap: 2rem;
+                }
+                .bottom{
+                    padding-bottom: 3rem;
+                }
+            }
+        }
+    }
+}

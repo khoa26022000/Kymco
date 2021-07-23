@@ -1,0 +1,179 @@
+// css header
+header{
+    --headerHeight:80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: var(--headerHeight);
+    width: 100%;
+    z-index: 1000;
+    .container-fluid{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        @include text(1.6rem,UTM,2.1rem,$white-cl,uppercase);
+        .list{
+            height: 100%;
+            display: flex;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            li{
+                height: 100%;
+                a{
+                    @include text(16px,UTM,21px,$white-cl,uppercase);
+                    height: 100%;
+                    padding: 0 30px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
+        .search{
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .btn{
+                padding: 5px 10px;
+                background: $red-bg-btn;
+                color: white;
+                margin: 0 10px;
+                border-radius: 5%;
+            }
+        }
+        .humberger{
+            cursor: pointer;
+            display: none;
+            width: 40px;
+            height: 22px;
+            position: relative;
+            z-index: 300;
+            span{
+                width: 100%;
+                height: 2px;
+                display: block;
+                background: $red-bg-btn;
+                position: absolute;
+                top: 50%;
+                @include transform(translateY(-50%));
+                @include transition($t);
+            }
+            &::before,&::after{
+                content: '';
+                width: 100%;
+                height: 2px;
+                display: block;
+                background: $red-bg-btn;
+                @include transform(rotate(0deg) translate(0px));
+                @include transition($t);
+            }
+            &::after{
+                position: absolute;
+                bottom: 0;
+            }
+            &:hover{
+                &.click{
+                    &::before{
+                        @include transform(rotate(-45deg) translate(-8px, 6px) );
+                        @include transition($t);
+                    }
+                    span{
+                        opacity: 0;
+                        @include transition($t);
+                    }
+                    &::after{
+                        @include transform(rotate(45deg) translate(-8px,-6px) );
+                        @include transition($t);
+                    }
+                }
+            }
+        }
+        .nav{
+            display: none;
+        }
+    }
+}
+
+@include sm{
+    header{
+        .container-fluid{
+            .logo{
+                img{
+                    width: 150px;
+                }
+            }
+            .search{
+                display: none;
+            }
+            .list{
+                display: none;
+            }
+            .humberger{
+                display: block;
+            }
+            .nav{
+                display: none;
+                // opacity: 0;
+                width: 100vw;
+                height: 100vh;
+                background: black;
+                position: fixed;
+                top: 0;
+                left: 0;
+                @include transform(initial);
+                z-index: 200;
+                // pointer-events: none;
+                @include transition(opacity $t);
+                &.click{
+                    display: block;
+                    pointer-events: auto;
+                }
+                ul{
+                    flex-direction: column;
+                    @include mid();
+                    li{
+                        text-align: center;
+                        margin: 20px auto;
+                        a{
+                            padding: 20px;
+                            @include text(16px,UTM,21px,$white-cl,uppercase);
+                            // @include text($fz-text,peb,20px,white,uppercase);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include md {
+    header {
+        .container-fluid{
+            .list{
+                left: 47%;
+            }
+            .search{
+                width: 250px;
+            }
+        }
+    }
+}
+
+@include xs{
+    header{
+        --heightHeader: 60px;
+        opacity: 1;
+        .container-fluid{
+            .humberger{
+                display: block;
+            }
+        }
+    }
+}
+.bg{
+    background: black;
+}
